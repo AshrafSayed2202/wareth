@@ -72,20 +72,20 @@ const Nav = () => {
                     </li>
                     <li className={styles.navItem}>
                         <a
-                            href="#FAQs"
-                            onClick={(e) => handleLinkClick(e, 'FAQs')}
-                            className={activeSection === 'FAQs' ? styles.active : styles.navLink}
-                        >
-                            الاسئلة الشائعة
-                        </a>
-                    </li>
-                    <li className={styles.navItem}>
-                        <a
                             href="#business"
                             onClick={(e) => handleLinkClick(e, 'business')}
                             className={activeSection === 'business' ? styles.active : styles.navLink}
                         >
                             ماذا نشتري
+                        </a>
+                    </li>
+                    <li className={styles.navItem}>
+                        <a
+                            href="#FAQs"
+                            onClick={(e) => handleLinkClick(e, 'FAQs')}
+                            className={activeSection === 'FAQs' ? styles.active : styles.navLink}
+                        >
+                            الاسئلة الشائعة
                         </a>
                     </li>
                     <li className={styles.navItem}>
