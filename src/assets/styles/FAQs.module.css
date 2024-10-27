@@ -1,0 +1,74 @@
+.heading {
+    margin-bottom: 40px;
+    margin-top: 80px;
+    font-size: 3rem;
+    color: #005D45;
+    font-weight: 600;
+}
+
+.faqContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faqItem {
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    transition: background-color 0.3s ease;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #005D45;
+    font-size: 24px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background-color: #E1F5E3;
+    border-radius: 6px;
+}
+
+.icon::before,
+.icon::after {
+    content: "";
+    position: absolute;
+    background-color: #333;
+    width: 60%;
+    height: 2px;
+    left: 8px;
+    bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.icon::before {
+    transform: rotate(0deg);
+    /* Horizontal line */
+}
+
+.icon::after {
+    transform: rotate(90deg);
+    /* Vertical line */
+}
+
+.iconOpen::after {
+    transform: rotate(0deg);
+    /* Rotate to create the "-" icon */
+}
+
+.answer {
+    overflow: hidden;
+    transition: height 0.3s ease;
+    /* Smooth height transition */
+    height: 0;
+    /* Collapsed height */
+    color: #668079;
+    font-size: 24px;
+}
