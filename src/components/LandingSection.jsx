@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../assets/styles/Landing.module.css';
 import LandingImage from '../assets/images/landing.jpg'
 import phoneIcon from '../assets/images/phone-icon.svg'
-const Landing = () => {
+const LandingSection = () => {
     return (
         <section className={styles.landing}>
             <img
@@ -26,4 +26,4 @@ const Landing = () => {
     );
 };
 
-export default Landing;
+export default LandingSection;

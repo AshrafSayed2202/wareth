@@ -8,7 +8,7 @@ import Card3Image1 from '../assets/images/Card3Image1.jpg'
 import Card3Image2 from '../assets/images/Card3Image2.jpg'
 import Card3Image3 from '../assets/images/Card3Image3.jpg'
 import locationIcon from '../assets/images/locationIcon.svg'
-const ImageCardComponent = () => {
+const ImageCardSection = () => {
     const [activeCardIndex, setActiveCardIndex] = useState(0);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -84,4 +84,4 @@ const ImageCardComponent = () => {
     );
 };
 
-export default ImageCardComponent;
+export default ImageCardSection;

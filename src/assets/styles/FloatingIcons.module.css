@@ -71,7 +71,7 @@
 }
 
 .floatingButton:hover .circleIcon {
-    width: 200px;
+    width: 170px;
     /* Expanded width on hover */
     transition-delay: 0.3s;
 }
@@ -81,7 +81,7 @@
     transition: 0.3s;
     transition-delay: 0.3s;
     position: absolute;
-    width: 150px;
+    width: 120px;
 }
 
 .floatingButton:hover .text {
