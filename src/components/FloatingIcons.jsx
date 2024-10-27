@@ -8,6 +8,7 @@ const FloatingIcons = () => {
     return (
         <div className={styles.container}>
             <div className={styles.iconColumn}>
+                <span className={styles.iconText}>تابعنا</span>
                 <div className={styles.icon}>
                     <img src={Snapchat} alt="Snapchat" />
                 </div>

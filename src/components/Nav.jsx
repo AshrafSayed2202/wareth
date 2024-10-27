@@ -48,60 +48,56 @@ const Nav = () => {
     }, []);
     return (
         <nav className={styles.nav}>
-            <FloatingIcons />
-            <div className={styles.logo}>
-                <img src={Logo} alt="Logo" className={styles.logoImage} />
-            </div>
-            <ul className={styles.navList}>
-                <li className={styles.navItem}>
-                    <NavLink
-                        to="/"
-                        className={({ isActive }) => (isActive ? styles.active : styles.navLink)}
-                    >
-                        الصفحة الرئيسة
-                    </NavLink>
-                </li>
-                <li className={styles.navItem}>
-                    <NavLink
-                        to="/blogs"
-                        className={({ isActive }) => (isActive ? styles.active : styles.navLink)}
-                    >
-                        المدونات
-                    </NavLink>
-                </li>
-                <li className={styles.navItem}>
-                    <a
-                        href="#FAQs"
-                        onClick={(e) => handleLinkClick(e, 'FAQs')}
-                        className={activeSection === 'FAQs' ? styles.active : styles.navLink}
-                    >
-                        الاسئلة الشائعة
-                    </a>
-                </li>
-                <li className={styles.navItem}>
-                    <a
-                        href="#business"
-                        onClick={(e) => handleLinkClick(e, 'business')}
-                        className={activeSection === 'business' ? styles.active : styles.navLink}
-                    >
-                        ماذا نشتري
-                    </a>
-                </li>
-                <li className={styles.navItem}>
-                    <a
-                        href="#contact"
-                        onClick={(e) => handleLinkClick(e, 'contact')}
-                        className={activeSection === 'contact' ? styles.active : styles.navLink}
-                    >
-                        اتصل بنا
-                    </a>
-                </li>
-            </ul>
-            <div className={styles.languageSwitcher}>
-                <select className={styles.dropdown}>
-                    <option value="en">EN</option>
-                    <option value="ar">AR</option>
-                </select>
+            <div className='container'>
+                <FloatingIcons />
+                <div className={styles.logo}>
+                    <img src={Logo} alt="Logo" className={styles.logoImage} />
+                </div>
+                <ul className={styles.navList}>
+                    <li className={styles.navItem}>
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) => (isActive ? styles.active : styles.navLink)}
+                        >
+                            الصفحة الرئيسة
+                        </NavLink>
+                    </li>
+                    <li className={styles.navItem}>
+                        <NavLink
+                            to="/blogs"
+                            className={({ isActive }) => (isActive ? styles.active : styles.navLink)}
+                        >
+                            المدونات
+                        </NavLink>
+                    </li>
+                    <li className={styles.navItem}>
+                        <a
+                            href="#FAQs"
+                            onClick={(e) => handleLinkClick(e, 'FAQs')}
+                            className={activeSection === 'FAQs' ? styles.active : styles.navLink}
+                        >
+                            الاسئلة الشائعة
+                        </a>
+                    </li>
+                    <li className={styles.navItem}>
+                        <a
+                            href="#business"
+                            onClick={(e) => handleLinkClick(e, 'business')}
+                            className={activeSection === 'business' ? styles.active : styles.navLink}
+                        >
+                            ماذا نشتري
+                        </a>
+                    </li>
+                    <li className={styles.navItem}>
+                        <a
+                            href="#contact"
+                            onClick={(e) => handleLinkClick(e, 'contact')}
+                            className={activeSection === 'contact' ? styles.active : styles.navLink}
+                        >
+                            اتصل بنا
+                        </a>
+                    </li>
+                </ul>
             </div>
         </nav>
     );

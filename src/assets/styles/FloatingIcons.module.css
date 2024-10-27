@@ -12,23 +12,38 @@
     flex-direction: column;
     background-color: #EEEEEE;
     border-radius: 30px;
-    width: 30px;
+    width: 50px;
     padding: 10px;
 }
 
 .icon {
-    margin: 5px 0;
+    margin: 8px 0;
     width: 30px;
     height: 30px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: hsla(165, 100%, 18%, 0.1);
+    border-radius: 50%;
 }
 
 .icon img {
-    width: 80%;
-    height: 80%;
+    width: 60%;
+    height: 60%;
+    opacity: 0.6;
+}
+
+.icon:hover img {
+    opacity: 1;
+}
+
+.iconText {
+    font-size: 14px;
+    margin: 8px 0;
+    color: #005D45;
+    text-align: center;
+    opacity: 0.7;
 }
 
 .floatingButton {
@@ -42,7 +57,7 @@
 }
 
 .circleIcon {
-    width: 16px;
+    width: 50px;
     height: 50px;
     background-color: #EEEEEE;
     border-radius: 25px;
@@ -56,7 +71,7 @@
 }
 
 .floatingButton:hover .circleIcon {
-    width: 170px;
+    width: 200px;
     /* Expanded width on hover */
     transition-delay: 0.3s;
 }
