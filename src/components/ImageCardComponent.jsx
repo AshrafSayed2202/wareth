@@ -72,6 +72,10 @@ const ImageCardComponent = () => {
                                 </div>
                             </div>
                             <p className={styles.cardText}>{card.text}</p>
+                            <div className={styles.contacts}>
+                                <span>اتصل بنا</span>
+                                <span dir='ltr'>+966 50 665 3804</span>
+                            </div>
                         </div>
                     );
                 })}
