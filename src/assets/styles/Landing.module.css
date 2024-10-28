@@ -10,7 +10,7 @@
     height: 100%;
     object-fit: contain;
     position: absolute;
-    top: 42px;
+    top: -28px;
     left: 0;
     z-index: 1;
 }

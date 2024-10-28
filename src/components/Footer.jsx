@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import styles from "../assets/styles/Footer.module.css";
 import Logo from '../assets/images/Logo.png'
 import VisionLogo from '../assets/images/VisionLogo.svg'
@@ -12,7 +13,6 @@ const Footer = () => {
                     <img src={VisionLogo} alt="Vision Logo" />
                 </div>
                 <div className={styles.container}>
-
                     <div className={styles.linksSection}>
                         <h3>نظرة عامة</h3>
                         <ul className={styles.links}>
@@ -34,7 +34,6 @@ const Footer = () => {
                             <li dir="ltr"><a href="#about">+966 50 665 3804</a></li>
                         </ul>
                     </div>
-
                     <div className={styles.socialSection}>
                         <h3>تابعنا علي</h3>
                         <div className={styles.socialIcons}>
@@ -67,12 +66,20 @@ const Footer = () => {
                 <div className={styles.footerBottom}>
                     <div>
                         <p> &copy; <a href="https://fawziuiux.com/" target="_blank" rel="noreferrer">Fawziuiux</a> , جميع الحقوق محفوظة  , {new Date().getFullYear()} </p>
-                        <p style={{ fontFamily: 'sans-serif' }}>Developed by <a href="https://www.linkedin.com/in/ashraf-sayed22/" target="_blank" rel="noreferrer">Ashraf Sayed</a></p>
+                        <p>تم التطوير بواسطة : <a href="https://www.linkedin.com/in/ashraf-sayed22/" target="_blank" rel="noreferrer">Ashraf Sayed</a></p>
                     </div>
                     <div style={{ display: 'flex', gap: '7px' }}>
-                        <a href="/terms"> الشروط والأحكام</a>
+                        <Link
+                            to="/terms"
+                        >
+                            الشروط والأحكام
+                        </Link>
                         |
-                        <a href="/privaciy">سياسة الخصوصية</a>
+                        <Link
+                            to="/privaciy"
+                        >
+                            سياسة الخصوصية
+                        </Link>
                     </div>
                 </div>
             </div>

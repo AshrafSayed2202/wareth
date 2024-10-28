@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NotFound from './components/NotFound.jsx';
 import Nav from './components/Nav.jsx';
 import Home from './components/Home.jsx';
 import './assets/styles/main.css'
@@ -8,9 +9,12 @@ const App = () => {
   return (
     <Router>
       <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
       <Footer />
     </Router>
   );
