@@ -51,3 +51,7 @@ nav>div.container {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url('../images/contact.jpg') lightgray 50% / cover no-repeat;
     border-radius: 25px;
 }
+
+section {
+    margin-bottom: 120px;
+}

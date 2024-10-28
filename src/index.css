@@ -1,9 +1,9 @@
 body {
   margin: 0;
   font-family: Lina Sans;
+  font-feature-settings: 'liga' off, 'clig' off;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 500vh;
   background-color: #F5FAF5;
 }
 

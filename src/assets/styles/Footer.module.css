@@ -1,0 +1,145 @@
+.footer {
+    background-color: #005D45;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.logoSection {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.logoSection span {
+    display: inline-block;
+    background-color: #fff;
+    width: 1px;
+    height: 60px;
+    margin: 0 24px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.description {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.linksSection {
+    flex: 1;
+    min-width: 150px;
+}
+
+.linksSection h3 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+.links li {
+    margin-bottom: 5px;
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.socialSection {
+    flex: 1;
+    min-width: 150px;
+}
+
+.socialSection h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 10px;
+}
+
+.icon img {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+}
+
+.footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid hsla(126, 54%, 53%, 0.25);
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.footerBottom a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footerBottom a:hover {
+    text-decoration: underline;
+}
+
+.footerBottom div:first-child a {
+    font-family: sans-serif;
+}
+
+
+.iconContainer {
+    border-radius: 8px;
+    background: rgba(21, 44, 50, 0.10);
+    display: flex;
+    width: 43px;
+    height: 43px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.iconContainer:hover {
+    background: #337D6A;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logoSection,
+    .linksSection,
+    .socialSection {
+        text-align: center;
+    }
+}
