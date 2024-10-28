@@ -4,7 +4,7 @@ import phoneIcon from '../assets/images/phone-icon.svg'
 
 const ContactSection = () => {
     return (
-        <section className='container'>
+        <section className='container' id='contact'>
             <h1 className='heading'>تواصل معنا</h1>
             <div className="contact-landing">
                 <div className={styles.overlay}>

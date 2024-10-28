@@ -23,7 +23,7 @@ const BusinessSection = () => {
     ];
 
     return (
-        <div className='container'>
+        <section className='container'>
             <h1 className={styles.heading}>كيف يتم شراء العفش المستعمل في الرياض؟</h1>
             <div className={styles.cardContainer}>
                 {cards.map((card, index) => (
@@ -34,7 +34,7 @@ const BusinessSection = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 

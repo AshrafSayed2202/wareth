@@ -41,7 +41,7 @@ const FAQs = () => {
     ];
 
     return (
-        <div className="container">
+        <section className="container" id="FAQs">
             <h1 className={styles.heading}>الأسئلة الشائعة</h1>
             <div className={styles.faqContainer}>
                 {faqs.map((faq, index) => (
@@ -62,7 +62,7 @@ const FAQs = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 

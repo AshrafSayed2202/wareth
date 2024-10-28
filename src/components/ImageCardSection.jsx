@@ -42,7 +42,7 @@ const ImageCardSection = () => {
         setCurrentImageIndex(0);
     };
     return (
-        <section className='container'>
+        <section className='container' id="business">
             <h1 className={styles.header}>ماذا نشترى</h1>
             <div className={styles.cards}>
                 {cards.map((card, index) => {
