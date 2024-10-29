@@ -59,6 +59,7 @@
 .keywords {
     display: flex;
     gap: 10px;
+    text-align: center;
 }
 
 .keyword {
@@ -115,10 +116,47 @@
 
 .inactive .keywords {
     flex-direction: column;
-    text-align: center;
 }
 
 .inactive .cardGadgets {
     justify-content: center;
     align-items: center;
+}
+
+@media (width<769px) {
+    .cards {
+        flex-wrap: wrap;
+    }
+
+    .active,
+    .inactive {
+        width: 100%;
+    }
+
+    .keywords {
+        flex-wrap: wrap;
+    }
+
+    .inactive .keywords {
+        flex-direction: row;
+        text-align: center;
+    }
+
+    .inactive .cardGadgets {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .inactive .cardText,
+    .inactive .cardText::after,
+    .inactive .location,
+    .inactive .contacts {
+        display: block;
+        opacity: 1;
+    }
+
+    .inactive .location,
+    .inactive .contacts {
+        display: flex;
+    }
 }
