@@ -47,3 +47,14 @@
     color: #668079;
     font-size: 24px;
 }
+
+@media (width<769px) {
+    .cardContainer {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 100%;
+
+    }
+}
