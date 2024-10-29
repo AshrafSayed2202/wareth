@@ -142,4 +142,15 @@
     .socialSection {
         text-align: center;
     }
+
+    .logoSection {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logoSection span {
+        height: 1px;
+        width: 60px;
+        margin: 24px 0;
+    }
 }
