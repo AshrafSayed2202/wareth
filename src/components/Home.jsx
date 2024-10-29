@@ -2,6 +2,7 @@ import React from 'react';
 import LandingSection from './LandingSection';
 import ImageCardSection from './ImageCardSection';
 import BusinessSection from './BusinessSection';
+import LatestBlogs from './LatestBlogs';
 import FAQs from './FAQs';
 import ContactSection from './ContactSection';
 
@@ -14,6 +15,7 @@ const Home = () => {
             <LandingSection />
             <ImageCardSection />
             <BusinessSection />
+            <LatestBlogs title="المدونات" />
             <FAQs />
             <ContactSection />
         </>

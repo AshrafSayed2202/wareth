@@ -59,11 +59,17 @@
 
 .blogDetails {
     color: #668079;
-    font-size: 12px;
+    font-size: 1.125rem;
     margin-bottom: 30px;
 }
 
-.blogDetails>div {
+.detailsArrange {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.detailsArrange>span {
     display: flex;
     align-items: center;
     gap: 7px;
@@ -71,6 +77,80 @@
 
 .blogIcon {
     display: inline-block;
-    width: 12px;
+    width: 16px;
     fill: #668079;
+}
+
+/* Latest blogs */
+.latestBlogs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    color: #668079;
+    fill: #668079;
+}
+
+.blogLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.blogCard {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    height: 100%;
+}
+
+.cardText {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.blogCard:hover .blogTitle,
+.blogCard:hover .blogContent {
+    text-decoration: underline;
+}
+
+.blogImage {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.blogTitle {
+    font-size: 32px;
+    font-weight: 600;
+    color: #005D45;
+    line-height: 150%;
+    margin: 0.5rem 0;
+}
+
+.blogContent {
+    font-size: 18px;
+    color: #668079;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 25px 0;
+    flex: 1;
+}
+
+.blogDate,
+.blogLocation {
+    font-size: 0.85rem;
+    color: #777;
+    margin: 0.25rem 0;
 }
