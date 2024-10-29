@@ -9,22 +9,22 @@ const FloatingIcons = () => {
         <div className={styles.container}>
             <div className={styles.iconColumn}>
                 <span className={styles.iconText}>تابعنا</span>
-                <div className={styles.icon}>
+                <a className={styles.icon} href='https://www.tiktok.com/@user7yrqbiqnnt?_t=8qvCN6LXuFt&_r=1' target='_blank' rel="noreferrer">
                     <img src={Snapchat} alt="Snapchat" />
-                </div>
-                <div className={styles.icon}>
+                </a>
+                <a className={styles.icon} href='https://www.tiktok.com/@user7yrqbiqnnt?_t=8qvCN6LXuFt&_r=1' target='_blank' rel="noreferrer">
                     <img src={Instagram} alt="Instagram" />
-                </div>
-                <div className={styles.icon}>
+                </a>
+                <a className={styles.icon} href='https://www.tiktok.com/@user7yrqbiqnnt?_t=8qvCN6LXuFt&_r=1' target='_blank' rel="noreferrer">
                     <img src={TikTok} alt="TikTok" />
-                </div>
+                </a>
             </div>
-            <div className={styles.floatingButton}>
+            <a className={styles.floatingButton} href='https://wa.me/+966506653804' target='_blank' rel="noreferrer">
                 <div className={styles.circleIcon}>
                     <div className={styles.text} dir='ltr'>+966 50 665 3804</div>
                     <img src={WhatsApp} alt="WhatsApp" />
                 </div>
-            </div>
+            </a>
         </div>
     );
 };

@@ -50,9 +50,9 @@ const Nav = () => {
         <nav className={styles.nav}>
             <div className='container'>
                 <FloatingIcons />
-                <div className={styles.logo}>
+                <NavLink to="/" className={styles.logo}>
                     <img src={Logo} alt="Logo" className={styles.logoImage} />
-                </div>
+                </NavLink>
                 <ul className={styles.navList}>
                     <li className={styles.navItem}>
                         <NavLink
