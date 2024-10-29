@@ -20,6 +20,34 @@
     padding: 0;
 }
 
+.toggleMenu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    right: 20px;
+}
+
+.toggleMenu span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: 0.3s;
+}
+
+.toggleMenu.open {
+    gap: 0;
+}
+
+.toggleMenu.open span:nth-child(1) {
+    transform: translateY(2px) rotate(45deg);
+}
+
+.toggleMenu.open span:nth-child(2) {
+    rotate: -45deg;
+}
+
 .navItem {
     margin: 0 1rem;
 }
@@ -49,4 +77,32 @@
 
 .logoImage {
     height: 40px;
+}
+
+@media (width<992px) {
+    .navItem {
+        margin: 0;
+    }
+}
+
+@media (width<769px) {
+    .toggleMenu {
+        display: flex;
+    }
+
+    .navList {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #005D45;
+        padding: 25px;
+        border-bottom-left-radius: 60px;
+        transform: translateX(100%);
+        transition: 0.4s;
+    }
+
+    .active {
+        transform: translateX(0%);
+    }
 }

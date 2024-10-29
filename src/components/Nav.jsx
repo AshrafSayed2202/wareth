@@ -5,6 +5,7 @@ import Logo from '../assets/images/Logo.png'
 import FloatingIcons from './FloatingIcons';
 const Nav = () => {
     const [activeSection, setActiveSection] = useState('');
+    const [isOpen, setIsOpen] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -39,7 +40,9 @@ const Nav = () => {
             }, 100);
         }
     };
-
+    const toggleMenu = () => {
+        setIsOpen(!isOpen)
+    }
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
@@ -50,10 +53,14 @@ const Nav = () => {
         <nav className={styles.nav}>
             <div className='container'>
                 <FloatingIcons />
+                <div className={`${styles.toggleMenu} ${isOpen ? styles.open : ''}`} onClick={() => { toggleMenu() }}>
+                    <span></span>
+                    <span></span>
+                </div>
                 <NavLink to="/" className={styles.logo}>
                     <img src={Logo} alt="Logo" className={styles.logoImage} />
                 </NavLink>
-                <ul className={styles.navList}>
+                <ul className={`${styles.navList} ${isOpen ? styles.active : ''}`}>
                     <li className={styles.navItem}>
                         <NavLink
                             to="/"
