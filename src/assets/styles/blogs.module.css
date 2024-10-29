@@ -13,11 +13,10 @@
 .pageHeader a {
     color: #005D45;
     text-decoration: none;
-    transition: 0.3s;
 }
 
 .pageHeader a:hover {
-    scale: 1.05;
+    text-decoration: underline;
 }
 
 .pageHeader span {
@@ -105,6 +104,10 @@
     line-height: 130%;
     font-size: 34px;
     align-items: center;
+}
+
+.showMore:hover svg {
+    transform: translateX(-5px);
 }
 
 .blogCard {

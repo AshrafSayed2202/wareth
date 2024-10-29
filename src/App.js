@@ -6,7 +6,6 @@ import Home from './components/Home.jsx';
 import BlogsPage from './components/BlogsPage.jsx';
 import DynamicPage from './components/DynamicPage.jsx';
 import './assets/styles/main.css'
-import ContactSection from './components/ContactSection.jsx';
 import Footer from './components/Footer.jsx';
 const App = () => {
   return (
@@ -20,7 +19,6 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      <ContactSection />
       <Footer />
     </Router>
   );
