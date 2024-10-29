@@ -86,7 +86,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    padding: 1rem;
     color: #668079;
     fill: #668079;
 }
@@ -94,6 +93,17 @@
 .blogLink {
     text-decoration: none;
     color: inherit;
+}
+
+.showMore {
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    color: #005D45;
+    font-weight: 400;
+    line-height: 130%;
+    font-size: 34px;
+    align-items: center;
 }
 
 .blogCard {
