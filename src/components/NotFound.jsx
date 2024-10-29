@@ -3,6 +3,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NotFound = () => {
+    React.useEffect(() => {
+        document.title = 'الوارث | الصفحة غير موجودة'
+    }, [])
     const styles = {
         container: {
             display: 'flex',
@@ -40,7 +43,7 @@ const NotFound = () => {
 
     return (
         <div style={styles.container}>
-            <h1 style={styles.heading}>404 - Not Found</h1>
+            <h1 style={styles.heading}>Not Found - 404</h1>
             <p style={styles.message}>معذرا, الصفحة التي تحاول الوصول اليها غير موجودة.</p>
             <Link
                 to="/"
