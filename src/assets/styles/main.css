@@ -27,7 +27,7 @@
 
 @media (min-width:1200px) {
     .container {
-        width: 1500px;
+        width: 1170px;
     }
 }
 
@@ -53,5 +53,5 @@ nav>div.container {
 }
 
 section {
-    margin-bottom: 120px;
+    margin-bottom: 100px;
 }

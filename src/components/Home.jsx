@@ -4,7 +4,6 @@ import ImageCardSection from './ImageCardSection';
 import BusinessSection from './BusinessSection';
 import LatestBlogs from './LatestBlogs';
 import FAQs from './FAQs';
-import ContactSection from './ContactSection';
 
 const Home = () => {
     React.useEffect(() => {
@@ -17,7 +16,6 @@ const Home = () => {
             <BusinessSection />
             <LatestBlogs title="المدونات" />
             <FAQs />
-            <ContactSection />
         </>
     )
 };

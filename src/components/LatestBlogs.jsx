@@ -13,12 +13,10 @@ const LatestBlogs = (props) => {
                 const blogsRef = collection(db, "blogs");
                 const blogsQuery = query(blogsRef, orderBy("date", "desc"), limit(3));
                 const querySnapshot = await getDocs(blogsQuery);
-
                 const latestBlogs = querySnapshot.docs.map(doc => ({
                     id: doc.id,
                     ...doc.data()
                 }));
-
                 setBlogs(latestBlogs);
             } catch (error) {
                 console.error("Error fetching blogs:", error);
