@@ -10,7 +10,7 @@ import Card3Image3 from '../assets/images/Card3Image3.jpg'
 import locationIcon from '../assets/images/locationIcon.svg'
 import { motion } from 'framer-motion';
 import { animationDown } from '../helpers/animationDown'
-import { animationRight } from '../helpers/animationRight'
+import { animationLeft } from '../helpers/animationLeft'
 const ImageCardSection = () => {
     const [activeCardIndex, setActiveCardIndex] = useState(0);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -47,7 +47,7 @@ const ImageCardSection = () => {
     return (
         <section className='container' id="business">
             <motion.h1 {...animationDown} className={styles.header}>ماذا نشترى</motion.h1>
-            <motion.div {...animationRight} className={styles.cards}>
+            <motion.div {...animationLeft} className={styles.cards}>
                 {cards.map((card, index) => {
                     const isActive = index === activeCardIndex;
                     const currentImage = isActive ? card.images[currentImageIndex] : card.images[0];
