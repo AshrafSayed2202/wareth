@@ -24,7 +24,7 @@ const LandingSection = () => {
                         </span>
                     </h1>
                     <p>اتصل بنا الآن</p>
-                    <span dir='ltr'> <img src={phoneIcon} alt="phone icon" />+966 50 665 3804</span>
+                    <span dir='ltr'><a href="tel:+966506653804"><img src={phoneIcon} alt="phone icon" />+966 50 665 3804</a></span>
                 </div>
             </motion.div>
         </section>

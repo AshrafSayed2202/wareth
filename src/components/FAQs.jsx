@@ -44,7 +44,7 @@ const FAQs = () => {
 
     return (
         <section className="container" id="FAQs">
-            <motion.h1 {...animationDown} className={styles.heading}>الأسئلة الشائعة</motion.h1>
+            <motion.h1 {...animationDown} className='heading'>الأسئلة الشائعة</motion.h1>
             <div className={styles.faqContainer}>
                 {faqs.map((faq, index) => (
                     <motion.div {...animationLeft} transition={{ delay: index * 0.3 }} key={index} className={styles.faqItem}>

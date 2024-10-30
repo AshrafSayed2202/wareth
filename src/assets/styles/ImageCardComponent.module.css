@@ -161,3 +161,17 @@
         display: flex;
     }
 }
+
+@media (width<625px) {
+
+    .inactive .cardGadgets,
+    .cardGadgets {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .contacts span:nth-child(2) {
+        font-size: 24px;
+    }
+}

@@ -65,8 +65,7 @@ const Footer = () => {
                 </div>
                 <div className={styles.footerBottom}>
                     <div>
-                        <p> &copy; <a href="https://fawziuiux.com/" target="_blank" rel="noreferrer">Fawziuiux</a> , جميع الحقوق محفوظة  , {new Date().getFullYear()} </p>
-                        <p>تم التطوير بواسطة : <a href="https://www.linkedin.com/in/ashraf-sayed22/" target="_blank" rel="noreferrer">Ashraf Sayed</a></p>
+                        <p> &copy;Fawziuiux , جميع الحقوق محفوظة  , {new Date().getFullYear()} </p>
                     </div>
                     <div style={{ display: 'flex', gap: '7px' }}>
                         <Link
