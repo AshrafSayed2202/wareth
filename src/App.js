@@ -7,11 +7,13 @@ import BlogsPage from './components/BlogsPage.jsx';
 import DynamicPage from './components/DynamicPage.jsx';
 import './assets/styles/main.css'
 import Footer from './components/Footer.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx';
 const App = () => {
   return (
     <Router>
       <Nav />
       <main>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blogs" element={<BlogsPage />} />
