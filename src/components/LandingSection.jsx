@@ -2,6 +2,8 @@ import React from 'react';
 import styles from '../assets/styles/Landing.module.css';
 import LandingImage from '../assets/images/landing.jpg'
 import phoneIcon from '../assets/images/phone-icon.svg'
+import { motion } from 'framer-motion';
+import { animationDown } from '../helpers/animationDown'
 const LandingSection = () => {
     return (
         <section className={styles.landing}>
@@ -10,7 +12,10 @@ const LandingSection = () => {
                 alt="Landing Background"
                 className={styles.backgroundImage}
             />
-            <div className={styles.overlay}>
+            <motion.div
+                className={styles.overlay}
+                {...animationDown}
+            >
                 <div className={styles.textContainer}>
                     <h1>شركة الوارث
                         <br />
@@ -21,7 +26,7 @@ const LandingSection = () => {
                     <p>اتصل بنا الآن</p>
                     <span dir='ltr'> <img src={phoneIcon} alt="phone icon" />+966 50 665 3804</span>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 };

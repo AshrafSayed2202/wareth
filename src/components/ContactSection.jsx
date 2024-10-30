@@ -1,12 +1,14 @@
 import React from 'react';
 import styles from '../assets/styles/Landing.module.css';
 import phoneIcon from '../assets/images/phone-icon.svg'
-
+import { motion } from 'framer-motion';
+import { animationDown } from '../helpers/animationDown'
+import { animationLeft } from '../helpers/animationLeft'
 const ContactSection = () => {
     return (
         <section className='container' id='contact'>
-            <h1 className='heading'>تواصل معنا</h1>
-            <div className="contact-landing">
+            <motion.h1 {...animationDown} className='heading'>تواصل معنا</motion.h1>
+            <motion.div {...animationLeft} className="contact-landing">
                 <div className={styles.overlay}>
                     <div className={styles.textContainer}>
                         <h1>شركة الوارث
@@ -19,7 +21,7 @@ const ContactSection = () => {
                         <span dir='ltr'> <img src={phoneIcon} alt="phone icon" />+966 50 665 3804</span>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     )
 }

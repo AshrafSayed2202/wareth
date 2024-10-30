@@ -3,6 +3,9 @@ import styles from "../assets/styles/BusinessSection.module.css"; // Import CSS 
 import BusinessIcon1 from "../assets/images/BusinessIcon1.svg"
 import BusinessIcon2 from "../assets/images/BusinessIcon2.svg"
 import BusinessIcon3 from "../assets/images/BusinessIcon3.svg"
+import { motion } from 'framer-motion';
+import { animationDown } from '../helpers/animationDown'
+import { animationUp } from '../helpers/animationUp'
 const BusinessSection = () => {
     const cards = [
         {
@@ -24,17 +27,17 @@ const BusinessSection = () => {
 
     return (
         <section className='container'>
-            <h1 className={styles.heading}>كيف يتم شراء العفش المستعمل في الرياض؟</h1>
+            <motion.h1 {...animationDown} className={styles.heading}>كيف يتم شراء العفش المستعمل في الرياض؟</motion.h1>
             <div className={styles.cardContainer}>
                 {cards.map((card, index) => (
-                    <div key={index} className={styles.card}>
+                    <motion.div {...animationUp} transition={{ delay: index * 0.3 }} key={index} className={styles.card}>
                         <div className={styles.icon}>{card.icon}</div>
                         <h2 className={styles.title}>{card.title}</h2>
                         <p className={styles.description}>{card.description}</p>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
-        </section>
+        </section >
     );
 };
 

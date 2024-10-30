@@ -8,6 +8,9 @@ import Card3Image1 from '../assets/images/Card3Image1.jpg'
 import Card3Image2 from '../assets/images/Card3Image2.jpg'
 import Card3Image3 from '../assets/images/Card3Image3.jpg'
 import locationIcon from '../assets/images/locationIcon.svg'
+import { motion } from 'framer-motion';
+import { animationDown } from '../helpers/animationDown'
+import { animationRight } from '../helpers/animationRight'
 const ImageCardSection = () => {
     const [activeCardIndex, setActiveCardIndex] = useState(0);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -43,8 +46,8 @@ const ImageCardSection = () => {
     };
     return (
         <section className='container' id="business">
-            <h1 className={styles.header}>ماذا نشترى</h1>
-            <div className={styles.cards}>
+            <motion.h1 {...animationDown} className={styles.header}>ماذا نشترى</motion.h1>
+            <motion.div {...animationRight} className={styles.cards}>
                 {cards.map((card, index) => {
                     const isActive = index === activeCardIndex;
                     const currentImage = isActive ? card.images[currentImageIndex] : card.images[0];
@@ -79,7 +82,7 @@ const ImageCardSection = () => {
                         </div>
                     );
                 })}
-            </div>
+            </motion.div>
         </section>
     );
 };

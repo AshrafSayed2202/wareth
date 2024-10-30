@@ -4,7 +4,9 @@ import { db } from "../firebaseConfig";
 import { collection, query, orderBy, limit, getDocs } from "firebase/firestore";
 import styles from '../assets/styles/blogs.module.css';
 import DateComponent from "./DateComponent.jsx";
-
+import { motion } from 'framer-motion';
+import { animationDown } from '../helpers/animationDown'
+import { animationUp } from '../helpers/animationUp'
 const LatestBlogs = (props) => {
     const [blogs, setBlogs] = useState([]);
 
@@ -34,7 +36,7 @@ const LatestBlogs = (props) => {
 
     return (
         <section className="container">
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '80px', marginBottom: '40px' }}>
+            <motion.div {...animationDown} style={{ display: 'flex', justifyContent: 'space-between', marginTop: '80px', marginBottom: '40px' }}>
                 <h1 className="heading" style={{ margin: 0 }}>
                     {props.title}
                 </h1>
@@ -42,11 +44,11 @@ const LatestBlogs = (props) => {
                     المزيد
                     <svg width={24} fill="#46C752" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" /></svg>
                 </Link>
-            </div>
+            </motion.div>
             <div className={styles.latestBlogs}>
-                {blogs.map(blog => (
+                {blogs.map((blog, index) => (
                     <Link key={blog.id} to={`/blogs/${blog.id}`} className={styles.blogLink}>
-                        <div className={styles.blogCard}>
+                        <motion.div {...animationUp} transition={{ delay: index * 0.3 }} className={styles.blogCard}>
                             <img src={blog.image} alt={blog.title} className={styles.blogImage} />
                             <div className={styles.cardText}>
                                 <h2 className={styles.blogTitle}>{blog.title}</h2>
@@ -81,7 +83,7 @@ const LatestBlogs = (props) => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     </Link>
                 ))}
             </div>

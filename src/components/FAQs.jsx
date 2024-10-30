@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import styles from "../assets/styles/FAQs.module.css"
-
+import { motion } from 'framer-motion';
+import { animationDown } from '../helpers/animationDown'
+import { animationLeft } from '../helpers/animationLeft'
 const FAQs = () => {
     const [activeIndices, setActiveIndices] = useState([]);
     const contentRefs = useRef([]);
@@ -42,10 +44,10 @@ const FAQs = () => {
 
     return (
         <section className="container" id="FAQs">
-            <h1 className={styles.heading}>الأسئلة الشائعة</h1>
+            <motion.h1 {...animationDown} className={styles.heading}>الأسئلة الشائعة</motion.h1>
             <div className={styles.faqContainer}>
                 {faqs.map((faq, index) => (
-                    <div key={index} className={styles.faqItem}>
+                    <motion.div {...animationLeft} transition={{ delay: index * 0.3 }} key={index} className={styles.faqItem}>
                         <div className={styles.question} onClick={() => toggleQuestion(index)}>
                             <span>{faq.question}</span>
                             <div className={`${styles.icon} ${activeIndices.includes(index) ? styles.iconOpen : ""}`} />
@@ -59,7 +61,7 @@ const FAQs = () => {
                         >
                             <p>{faq.answer}</p>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </section>
