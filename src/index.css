@@ -1,3 +1,45 @@
+@font-face {
+  font-family: 'Lina Sans';
+  font-weight: 400;
+  /* Regular */
+  src: url('./fonts/LinaSans-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Lina Sans';
+  font-weight: 300;
+  /* Extra Light */
+  src: url('./fonts/LinaSans-ExtraLight.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Lina Sans';
+  font-weight: 200;
+  /* Light */
+  src: url('./fonts/LinaSans-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Lina Sans';
+  font-weight: 500;
+  /* Medium */
+  src: url('./fonts/LinaSans-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Lina Sans';
+  font-weight: 600;
+  /* Semi Bold */
+  src: url('./fonts/LinaSans-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Lina Sans';
+  font-weight: 100;
+  /* Thin */
+  src: url('./fonts/LinaSans-Thin.otf') format('opentype');
+}
+
 body {
   margin: 0;
   font-family: Lina Sans;
