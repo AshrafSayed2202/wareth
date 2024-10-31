@@ -65,9 +65,9 @@ const ImageCardSection = () => {
                             <div className={styles.cardGadgets}>
                                 <div className={styles.location}><img src={locationIcon} alt="location icon" />الرياض، المملكة العربية السعودية</div>
                                 <div className={styles.keywords}>
-                                    {card.keywords.map((keyword) => {
+                                    {card.keywords.map((keyword, index) => {
                                         return (
-                                            <span className={styles.keyword}>
+                                            <span className={styles.keyword} key={index}>
                                                 {keyword}
                                             </span>
                                         )

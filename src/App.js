@@ -1,4 +1,5 @@
 import React from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NotFound from './components/NotFound.jsx';
 import Nav from './components/Nav.jsx';
@@ -13,23 +14,25 @@ import Footer from './components/Footer.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
 const App = () => {
   return (
-    <Router>
-      <Nav />
-      <main>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/blogs" element={<BlogsPage />} />
-          <Route path="/blogs/:id" element={<DynamicPage />} />
-          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-          <Route path="/dashboard/login" element={<Login />} />
-          <Route path="/dashboard/add-blog" element={<ProtectedRoute><Home /></ProtectedRoute>} />
-          <Route path="/dashboard/edit-blog/:id" element={<ProtectedRoute><Home /></ProtectedRoute>} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
-      <Footer />
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <Nav />
+        <main>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/blogs" element={<BlogsPage />} />
+            <Route path="/blogs/:id" element={<DynamicPage />} />
+            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+            <Route path="/dashboard/login" element={<Login />} />
+            <Route path="/dashboard/add-blog" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+            <Route path="/dashboard/edit-blog/:id" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </HelmetProvider>
   );
 };
 

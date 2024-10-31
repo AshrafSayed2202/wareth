@@ -5,6 +5,7 @@ import { collection, query, orderBy, getDocs } from "firebase/firestore";
 import BlogsLanding from '../assets/images/blogs-landing.jpg'
 import styles from '../assets/styles/blogs.module.css';
 import DateComponent from "./DateComponent.jsx";
+import { Helmet } from 'react-helmet-async';
 
 const BlogsPage = () => {
     const [blogs, setBlogs] = React.useState([]);
@@ -31,11 +32,16 @@ const BlogsPage = () => {
         const plainText = new DOMParser().parseFromString(htmlContent, "text/html").body.textContent || "";
         return plainText.length > limit ? `${plainText.substring(0, limit)}...` : plainText;
     };
-    React.useEffect(() => {
-        document.title = 'الوارث | المدونات'
-    }, [])
     return (
         <section>
+            <Helmet>
+                <title>الوارث | المدونات</title>
+                <meta name="robots" content="index,follow" />
+                <meta
+                    name="description"
+                    content="يتم شراء الأساس المستعمل فى الرياض عن طريق شركة الوارث لشراء الاثاث المستعمل فى الرياض عن طريق إرسال مندوب متخصص لتقيم حالة الاثاث و التواصل مع العميل لتقديم أفضل و أعلى الاسعار لشراء الاثاث المستعمل فى الرياض ثم يتم فك و نقل الاثاث بعد الدفع مباشرة عن طريق خبراء و فنيين تابعين لشركة الوارث لشراء الاثاث المستعمل فى الرياض"
+                />
+            </Helmet>
             <div className={styles.pageHeader}>
                 <div className="container">
                     <p><Link to={'/'}>الصفحة الرئيسية</Link>{' > '}<span>المدونات</span></p>

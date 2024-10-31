@@ -6,6 +6,8 @@ import NotFound from './NotFound.jsx';
 import styles from '../assets/styles/blogs.module.css';
 import LatestBlogs from "./LatestBlogs.jsx";
 import DateComponent from "./DateComponent.jsx";
+import { Helmet } from 'react-helmet-async';
+
 const DynamicPage = () => {
     const { id } = useParams();
     const [data, setData] = useState(null);
@@ -39,6 +41,14 @@ const DynamicPage = () => {
 
     return (
         <>
+            <Helmet>
+                <title>الوارث | {`${data?.title}`}</title>
+                <meta name="robots" content="index,follow" />
+                <meta
+                    name="description"
+                    content={data?.content}
+                />
+            </Helmet>
             <section>
                 <div className={styles.pageHeader}>
                     <div className="container">
