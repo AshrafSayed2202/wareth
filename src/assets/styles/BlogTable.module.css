@@ -1,0 +1,100 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.th,
+.td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tr:hover {
+    background-color: #f1f1f1;
+}
+
+.button {
+    margin-right: 8px;
+    /* Space between buttons */
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007bff;
+    /* Button color */
+    color: white;
+    transition: background-color 0.3s;
+    font-family: Lina sans;
+    font-size: 18px;
+}
+
+.button:first-child {
+    background-color: #ff0000;
+}
+
+.button:first-child:hover {
+    background-color: #b80000;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    /* Darker button color on hover */
+}
+
+.logoutButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 100px;
+    font-family: Lina sans;
+}
+
+.button,
+.logoutButton {
+    display: inline-flex;
+    align-items: center;
+    fill: white;
+    gap: 7px;
+}
+
+.button svg,
+.logoutButton svg {
+    width: 18px;
+}
+
+.logoutButton:hover {
+    background-color: #ff3333;
+}
+
+@media (max-width: 768px) {
+
+    .th,
+    .td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .table {
+        font-size: 12px;
+        /* Adjust font size for smaller screens */
+    }
+}
