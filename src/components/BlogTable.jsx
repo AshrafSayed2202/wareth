@@ -4,6 +4,7 @@ import { db, auth } from '../firebaseConfig'; // Adjust the path as necessary
 import { collection, getDocs, doc, deleteDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
+import DateComponent from './DateComponent';
 import styles from '../assets/styles/BlogTable.module.css'; // Adjust the path as necessary
 
 const BlogTable = () => {
@@ -26,10 +27,8 @@ const BlogTable = () => {
                         date: data.date ? data.date.toDate() : null, // Convert to Date object
                     };
                 });
-
                 // Sort blogs by date (descending)
                 blogsData.sort((a, b) => (b.date ? b.date.getTime() : 0) - (a.date ? a.date.getTime() : 0));
-
                 setBlogs(blogsData);
             } catch (error) {
                 console.error("Error fetching blogs: ", error);
@@ -75,7 +74,7 @@ const BlogTable = () => {
             {
                 Header: 'التاريخ',
                 accessor: 'date',
-                Cell: ({ value }) => (value ? value.toLocaleDateString() : 'N/A'), // Format date or show N/A
+                Cell: ({ value }) => (value ? <DateComponent date={value} type={'normal'} /> : 'N/A'), // Format date or show N/A
             },
             {
                 Header: 'التحكم',
@@ -98,6 +97,8 @@ const BlogTable = () => {
 
     return (
         <div className='container'>
+            <span></span>
+            <button onClick={() => { navigate('/dashboard/add-blog') }} className={styles.button} style={{ marginBottom: '30px', marginRight: 0, padding: '10px 15px', fontSize: '20px' }}>إضافة مدونة<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M64 80c-8.8 0-16 7.2-16 16l0 320c0 8.8 7.2 16 16 16l320 0c8.8 0 16-7.2 16-16l0-320c0-8.8-7.2-16-16-16L64 80zM0 96C0 60.7 28.7 32 64 32l320 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM200 344l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" /></svg></button>
             {loading ? (
                 <p>Loading...</p>
             ) : blogs.length === 0 ? (

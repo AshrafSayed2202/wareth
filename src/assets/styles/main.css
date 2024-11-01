@@ -57,6 +57,11 @@ section {
     margin-bottom: 100px;
 }
 
+.ql-editor {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
 @media (width<769px) {
     .heading {
         text-align: center;
