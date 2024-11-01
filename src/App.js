@@ -13,6 +13,7 @@ import './assets/styles/main.css'
 import Footer from './components/Footer.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import AddBlog from './components/AddBlog.jsx';
+import EditBlog from './components/EditBlog.jsx';
 const App = () => {
   return (
     <HelmetProvider>
@@ -27,7 +28,7 @@ const App = () => {
             <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
             <Route path="/dashboard/login" element={<Login />} />
             <Route path="/dashboard/add-blog" element={<ProtectedRoute><AddBlog /></ProtectedRoute>} />
-            <Route path="/dashboard/edit-blog/:id" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+            <Route path="/dashboard/edit-blog/:id" element={<ProtectedRoute><EditBlog /></ProtectedRoute>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

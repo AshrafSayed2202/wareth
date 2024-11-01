@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { db, storage } from '../firebaseConfig';
-import { collection, addDoc, Timestamp } from 'firebase/firestore';
+import { doc, getDoc, updateDoc, Timestamp } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -13,33 +13,58 @@ const cities = [
     "الخبر", "عرعر", "سكاكا", "جيزان", "نجران", "الباحة", "الزلفي", "الدوادمي"
 ];
 
-const AddBlog = () => {
+const EditBlog = () => {
+    const { id } = useParams(); // Get blog ID from URL parameters
     const [title, setTitle] = useState('');
     const [image, setImage] = useState(null);
     const [location, setLocation] = useState('');
     const [content, setContent] = useState('');
+    const [initialImageURL, setInitialImageURL] = useState(''); // Store initial image URL
     const navigate = useNavigate();
-    React.useEffect(() => {
-        document.title = 'الوارث | إضافة مدونة'
-    }, [])
+
+    useEffect(() => {
+        document.title = 'الوارث | تعديل مدونة';
+
+        // Fetch blog data by ID
+        const fetchBlog = async () => {
+            const docRef = doc(db, 'blogs', id);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                const blogData = docSnap.data();
+                setTitle(blogData.title);
+                setInitialImageURL(blogData.image);
+                setLocation(blogData.location);
+                setContent(blogData.content); // Set content as HTML
+            } else {
+                console.error("No blog found with that ID.");
+            }
+        };
+
+        fetchBlog();
+    }, [id]);
+
     const handleImageChange = (e) => {
         if (e.target.files[0]) {
             setImage(e.target.files[0]);
         }
     };
 
-    const handleSubmit = async (e) => {
+    const handleUpdate = async (e) => {
         e.preventDefault();
 
         try {
-            let imageUrl = '';
+            let imageUrl = initialImageURL;
+
+            // Update image if a new one is uploaded
             if (image) {
                 const imageRef = ref(storage, `images/${image.name}-${Date.now()}`);
                 await uploadBytes(imageRef, image);
                 imageUrl = await getDownloadURL(imageRef);
             }
 
-            await addDoc(collection(db, 'blogs'), {
+            // Update blog data in Firestore
+            await updateDoc(doc(db, 'blogs', id), {
                 title,
                 image: imageUrl,
                 location,
@@ -49,14 +74,14 @@ const AddBlog = () => {
 
             navigate('/dashboard');
         } catch (error) {
-            console.error('Error adding blog:', error);
+            console.error('Error updating blog:', error);
         }
     };
 
     return (
         <div className={`${styles.container} container`}>
-            <h2 className='heading'>إضافة مدونة جديدة</h2>
-            <form onSubmit={handleSubmit}>
+            <h2 className='heading'>تعديل مدونة</h2>
+            <form onSubmit={handleUpdate}>
                 <div className={styles.formGroup}>
                     <label className={styles.label}>عنوان المدونة :</label>
                     <input
@@ -73,8 +98,10 @@ const AddBlog = () => {
                         type="file"
                         className={styles.fileInput}
                         onChange={handleImageChange}
-                        required
                     />
+                    {initialImageURL && !image && (
+                        <img src={initialImageURL} alt="Current Blog" className={styles.currentImage} />
+                    )}
                 </div>
                 <div className={styles.formGroup}>
                     <label className={styles.label}>موقع المدونة :</label>
@@ -94,15 +121,16 @@ const AddBlog = () => {
                     <label className={styles.label}>محتوي المدونة :</label>
                     <ReactQuill
                         theme="snow"
+                        dir="rtl"
                         value={content}
                         onChange={setContent}
-                        className={`${styles.textarea}`}
+                        className={styles.textarea}
                         placeholder="أكتب محتوي مدونتك هنا..."
                     />
                 </div>
                 <div className={styles.buttonGroup}>
                     <button type="submit" className={`${styles.button} ${styles.submitButton}`}>
-                        تـأكيد
+                        تحديث
                     </button>
                     <button
                         type="button"
@@ -117,4 +145,4 @@ const AddBlog = () => {
     );
 };
 
-export default AddBlog;
+export default EditBlog;
