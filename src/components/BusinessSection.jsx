@@ -21,7 +21,7 @@ const BusinessSection = () => {
         {
             icon: <img src={BusinessIcon3} alt="Icon 3" className={styles.icon} />,
             title: "نشتري الاثاث",
-            description: "نقوم بتسليمك النقدية قمن الاثاث و نقوم بفك و نقل الاثاث بكل سرعة و سهولة",
+            description: "نقوم بتسليمك النقدية ثمن الاثاث و نقوم بفك و نقل الاثاث بكل سرعة و سهولة",
         },
     ];
 
