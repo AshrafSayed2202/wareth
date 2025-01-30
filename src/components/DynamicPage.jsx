@@ -56,7 +56,7 @@ const DynamicPage = () => {
                         <p className={styles.head}>{data?.title}</p>
                     </div>
                 </div>
-                <img src={data?.image} alt={data?.image} className={styles.blogLanding} />
+                <img src={data?.image} alt={data?.title} className={styles.blogLanding} />
                 <div className="container">
                     <h1 className={styles.blogHeader}>{data?.title}</h1>
                     <div className={styles.blogDetails}>
@@ -80,8 +80,9 @@ const DynamicPage = () => {
                                 {data?.location}
                             </span>
                         </div>
+
                     </div>
-                    <div dangerouslySetInnerHTML={{ __html: data?.content }} />
+                    <div dangerouslySetInnerHTML={{ __html: data?.content }} className={styles.blogContentHtml} />
                 </div>
             </section>
             <LatestBlogs title="المزيد من أعمالنا في شراء الأثاث المستعمل بأفضل سعر" />

@@ -1,7 +1,7 @@
 .pageHeader {
     padding: 24px 0;
-    background: rgba(205, 240, 208, 0.50);
-    color: #005D45;
+    background: rgba(205, 240, 208, 0.5);
+    color: #005d45;
     font-size: 18px;
 }
 
@@ -11,7 +11,7 @@
 }
 
 .pageHeader a {
-    color: #005D45;
+    color: #005d45;
     text-decoration: none;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .pageHeader .head {
-    color: #005D45;
+    color: #005d45;
     font-size: 48px;
     font-weight: 600;
     line-height: 150%;
@@ -34,11 +34,11 @@
 }
 
 .pageHeader .head::before {
-    content: '';
+    content: "";
     width: 8px;
     height: 44px;
     border-radius: 100px 0px 0px 100px;
-    background: #46C752;
+    background: #46c752;
 }
 
 .blogLanding {
@@ -49,7 +49,7 @@
 }
 
 .blogHeader {
-    color: #005D45;
+    color: #005d45;
     font-size: 48px;
     font-weight: 600;
     line-height: 150%;
@@ -68,7 +68,7 @@
     gap: 7px;
 }
 
-.detailsArrange>span {
+.detailsArrange > span {
     display: flex;
     align-items: center;
     gap: 7px;
@@ -99,7 +99,7 @@
     display: flex;
     gap: 10px;
     text-decoration: none;
-    color: #005D45;
+    color: #005d45;
     font-weight: 400;
     line-height: 130%;
     font-size: 34px;
@@ -144,7 +144,7 @@
 .blogTitle {
     font-size: 32px;
     font-weight: 600;
-    color: #005D45;
+    color: #005d45;
     line-height: 150%;
     margin: 0.5rem 0;
 }
@@ -167,6 +167,12 @@
     font-size: 0.85rem;
     color: #777;
     margin: 0.25rem 0;
+}
+.blogContentHtml {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    line-height: 30px;
 }
 
 @media (width<992px) {
